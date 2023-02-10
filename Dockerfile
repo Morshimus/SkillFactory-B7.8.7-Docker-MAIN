@@ -9,7 +9,6 @@ RUN apk add gcc  \
     pip3 install --upgrade pip &&\ 
     pip3 install -r requirements.txt --no-cache-dir
 COPY SkillFactory/. /app
-COPY docker_entrypoint.sh /bin/docker_entrypoint.sh
 ADD $FAVICON  /app/static/polls/favicon.ico
 ENTRYPOINT ["python3"] 
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
